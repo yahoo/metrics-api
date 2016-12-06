@@ -1,0 +1,10 @@
+target/
+settings/
+.idea/
+.classpath
+.project
+*.iml
+.bb
+artifacts
+rhel.*package
+*.class
