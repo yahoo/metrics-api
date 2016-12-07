@@ -8,3 +8,4 @@ settings/
 artifacts
 rhel.*package
 *.class
+.DS_Store

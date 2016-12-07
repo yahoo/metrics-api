@@ -9,11 +9,11 @@
     <packaging>jar</packaging>
     <name>metrics_api</name>
     <description>Thread Safe api for logging metrics</description>
-    <version>1.0.1</version>
+    <version>1.0.2-SNAPSHOT</version>
 
     <scm>
         <developerConnection>scm:git:ssh://git@github.com/yahoo/metrics-api.git</developerConnection>
-        <tag>metrics_api-1.0.1</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <licenses>
