@@ -1,12 +1,22 @@
 language: java
+
 jdk:
 - oraclejdk8
+
 cache:
   directories:
   - $HOME/.m2
+
 script: mvn package
+
 after_success:
 - travis/deploy.sh
+
+branches:
+  only:
+  - master
+  - "/^metrics_api-[0-9]+\\.[0-9]+\\.[0-9]+/"
+
 env:
   global:
   - secure: vGW9Nrvl5c7KLemcTqITu+G3s9x2cNhHhz3bjTq6zH3CKRE7k/m84TCcAxdeHgOXkDh4yaAhwx9tkTSS7kcOWnJooyDZ2YrOm9vBjttSHcOO6UHbcUo4/joD36332b4C2nK+K/vfV23StBRqq4qPHOjpfBVxBOINPAGBm3oGsv9TuDlGu1HNF1fsaYbSOQvsZy5ijJpEsOs0S5XEpEhXD09ikz0sRY4jDARNbQLvYzCTs/+2QRi7d35W/wTmRfPoWXtc3U77+K0adjVD6U5jBuLF7IKrUEgxaxOVWaaUaRfN+M1mN6HIrau3McK3sKcC4ZJBzDOURuWiQtOd7ZMbFt/lsVejtSXxt2XWINmhevpELcqDUgdE9Pu937ejFloHBzlOQfyI+PbgS7KjCNeOsqveQG9haKDP9O6AA7WP/t5mEqz0O+krFGwfd0tHPbE8tpx+W6Hi8F3iimp16jahUJVeQmO+N8V62cArSBEXx/MeAvbkuE6sWlvrvuj+LqkVf5/S8RiIPzoS9kxM/ioJ3y/YHWmlrLRXkeFExftdusRE+d1pHb6DpaHR3MXaaWyVQPmhR7aqwzi0mXMxLNtGzV70QcgWgsU8ZFbTZmWt5GXKNrbX7QMluhhrogTk980eN58mqOZCDteF6L9OI1YCh0PSlirV9VRT2v27QKeJacM=
