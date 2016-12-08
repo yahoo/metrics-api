@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -ev
+set -e
 
 echo "TRAVIS_TAG is ${TRAVIS_TAG}" 
 
