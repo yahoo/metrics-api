@@ -10,7 +10,7 @@ IS_NOT_RELEASE=$?
 if ((${IS_NOT_RELEASE} == 1)); then
     echo "Not a tagged release version."
     echo "To release this tagged artifact into bintray, the git tag must be of"
-    echo "the format: metrics_api-*.  Example:  metrics_api-1.0.1, sshd_proxy-1.0.2"
+    echo "the format: metrics_api-*.  Example:  metrics_api-1.0.1, metrics_api-1.0.2"
     echo "etc."
     exit 0
 fi
