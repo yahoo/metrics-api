@@ -15,9 +15,8 @@ if ((${IS_NOT_RELEASE} == 1)); then
     exit 0
 fi
 
-echo "Publishing to bintray at https://bintray.com/yahoo/metrics_api"
-
 test "${TRAVIS_PULL_REQUEST}" == "false"
 test "${TRAVIS_BRANCH}" == "master"
 test "${TRAVIS_TAG}" != ""
+echo "Publishing to bintray at https://bintray.com/yahoo/maven/metrics_api"
 mvn deploy --settings travis/settings.xml
