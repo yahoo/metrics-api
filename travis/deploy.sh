@@ -17,6 +17,11 @@ fi
 
 test "${TRAVIS_PULL_REQUEST}" == "false"
 test "${TRAVIS_BRANCH}" == "master"
-test "${TRAVIS_TAG}" != ""
-echo "Publishing to bintray at https://bintray.com/yahoo/maven/metrics_api"
-mvn deploy --settings travis/settings.xml
+
+if [ -z "${TRAVIS_TAG}" ]
+then
+    echo "TRAVIS_TAG tag is not set, skip deploying"
+else
+    echo "Publishing to bintray at https://bintray.com/yahoo/maven/metrics_api"
+    mvn deploy --settings travis/settings.xml
+fi
