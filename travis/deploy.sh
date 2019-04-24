@@ -4,7 +4,7 @@ set -e
 
 echo "TRAVIS_TAG is ${TRAVIS_TAG}" 
 
-echo ${TRAVIS_TAG} | grep -q "metrics_api-";
+#echo ${TRAVIS_TAG} | grep -q "metrics_api-";
 #IS_NOT_RELEASE=$?
 
 #if ((${IS_NOT_RELEASE} == 1)); then
