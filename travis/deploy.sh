@@ -23,10 +23,11 @@ test "${TRAVIS_BRANCH}" == "master"
 
 echo "This is master branch build"
 
-if [ -z "${TRAVIS_TAG}" ]
+if [ -z "${TRAVIS_TAG}" ];
 then
     echo "TRAVIS_TAG tag is not set, skip deploying"
 else
-    echo "Publishing to bintray at https://bintray.com/yahoo/maven/metrics_api"
+    echo "TRAVIS_TAG is ${TRAVIS_TAG} , it is set. Start deploying"
+    echo "Publishing to binray at https://bintray.com/yahoo/maven/metrics_api"
     mvn deploy --settings travis/settings.xml
 fi
