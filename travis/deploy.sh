@@ -5,6 +5,7 @@ set -e
 echo "TRAVIS_TAG is ${TRAVIS_TAG}" 
 
 #echo ${TRAVIS_TAG} | grep -q "metrics_api-";
+echo "IS_NOT_RELEASE is ${IS_NOT_RELEASE}"
 #IS_NOT_RELEASE=$?
 
 #if ((${IS_NOT_RELEASE} == 1)); then
@@ -23,17 +24,11 @@ test "${TRAVIS_BRANCH}" == "master"
 
 echo "This is master branch build"
 
-#if [ -z "${TRAVIS_TAG}" ];
-#then
-#    echo "TRAVIS_TAG tag is not set, skip deploying"
-#else
-#    echo "TRAVIS_TAG is ${TRAVIS_TAG} , it is set. Start deploying"
-#    echo "Publishing to binray at https://bintray.com/yahoo/maven/metrics_api"
-#    mvn deploy --settings travis/settings.xml
-fi
-if test -z "$TRAVIS_TAG"
+if [ -z "${TRAVIS_TAG}" ]
 then
-      echo "$TRAVIS_TAG is empty"
+    echo "TRAVIS_TAG tag is not set, skip deploying"
 else
-      echo "$TRAVIS_TAG is NOT empty"
+    echo "Publishing to bintray at https://bintray.com/yahoo/maven/metrics_api"
+    echo "TRAVIS_TAG tag is set, starting deploying"
+    mvn deploy --settings travis/settings.xml
 fi
