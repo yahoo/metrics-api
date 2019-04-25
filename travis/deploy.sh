@@ -20,7 +20,6 @@ echo "TRAVIS_PULL_REQUEST is ${TRAVIS_PULL_REQUEST}"
 echo "TRAVIS_BRANCH is ${TRAVIS_BRANCH}"
 
 test "${TRAVIS_PULL_REQUEST}" == "false"
-test "${TRAVIS_BRANCH}" == "master"
 
 echo "This is master branch build"
 
